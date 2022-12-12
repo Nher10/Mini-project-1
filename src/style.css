@@ -35,7 +35,7 @@ html {
 
 /* SIGNIN/SIGNUP PAGE */
 
-main{
+.signin-page {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     width: 100%;
@@ -46,7 +46,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    display: none;
+    /* display: none; */
 }
 
 .box {
@@ -80,6 +80,8 @@ main{
     /* script.js */
     transition: .8s ease-in-out;
 }
+
+
 
 .slideshow {
     position: absolute;
@@ -199,6 +201,7 @@ main{
 .input-field.active + .label1 {
     font-size: 1.5rem;
     top: -4px;
+    color: transparent;
 }
 /* end */
 
@@ -297,10 +300,31 @@ main.sign-up-mode .slideshow {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     opacity: 0;
+    padding: 10rem;
+    background-size: cover;
+    transition: opacity .3s, transform .5s;
+}
+
+.photo-1 {
+    transform: translate(0, -50px);
+}
+
+
+.photo-2 {
+    padding: 20rem 5rem 5rem 5rem;
+    transform: translate(-50px, 0);
+}
+
+
+
+.photo-3 {
+    padding: 15rem 5rem 5rem 5rem;
+    transform: scale(.3) rotate(-20deg)
 }
 
 .photo.show {
     opacity: 1;
+    transform: none;
 }
 
 .text-slider {
@@ -321,6 +345,7 @@ main.sign-up-mode .slideshow {
     flex-direction: column;
     text-align: center;
     transform: translateY(0);
+    transition: .5s;
 }
 
 .text-group h2 {
@@ -344,6 +369,7 @@ main.sign-up-mode .slideshow {
     margin: 0 .5rem;
     border-radius: 50%;
     cursor: pointer;
+    transition: .3s;
 }
 
 .bullets span.active {
@@ -352,14 +378,269 @@ main.sign-up-mode .slideshow {
     border-radius: 2rem;
 }
 /* end */
+
+/* for validation */
+.error1-2 {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-top: 3rem;
+    display: none;
+}
+
+.error1-2 i {
+    color: maroon;
+}
+
+.error1-2 p {
+    color: maroon;
+    padding: 1rem;
+}
+
+.error2-2 {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-top: 4rem;
+    display: none;
+}
+
+.error2-2 i {
+    color: maroon;
+}
+
+.error2-2 p {
+    color: maroon;
+    padding-left: 1rem;
+}
+
+
+
+
+.error1 {
+    display: flex;
+    align-items: center;
+    padding-top: 3.6rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: none;
+}
+
+.error2 {
+    display: flex;
+    align-items: center;
+    padding-top: 3.6rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: none;
+}
+
+.error3 {
+    display: flex;
+    align-items: center;
+    padding-top: 3.6rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: none;
+}
+
+.error1 i {
+    color: maroon;
+}
+
+.error2 i {
+    color: maroon;
+}
+
+.error3 i {
+    color: maroon;
+}
+
+.error1 p {
+    color: maroon;
+    padding-left: 1rem;
+}
+
+.error2 p {
+    color: maroon;
+    padding-left: 1rem;
+}
+
+.error3 p {
+    color: maroon;
+    padding-left: 1rem;
+}
+/* end of validation */
+
+/* signin/signup modal */
+.login-modal {
+    position: fixed;
+    top: 11.5rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    width: 70rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 1rem 1rem;
+    display: none;
+}
+  
+.login-modal i {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 1.3rem;
+    color: #868383;
+    cursor: pointer;
+}
+  
+.login-modal p {
+    margin: 2rem 1rem 0 1rem;
+    font-size: 1.6rem;
+    color: #868383;
+}
+
+/* end of signin/signup modal */
+
+/* submit signup modal */
+.submit-modal {
+    max-width: 400px;
+    background-color: #fff;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* margin: 4rem; */
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.3);;
+    border-radius: 0 0 1rem 1rem;
+    display: none;
+}
+
+.submit-modal i {
+    position: absolute;
+    top: -35%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 10rem;
+    color: #379683;
+}
+
+.submit-modal h2 {
+    font-family: 'Righteous', cursive;
+    font-size: 3.2rem;
+    color: #868383;
+    padding-bottom: 3rem;
+    font-weight: 400;
+}
+
+.submit-modal p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: #868383;
+    padding-bottom: 3rem;
+}
+
+.submit-modal button {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #379683;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color .4s;
+}
+
+.submit-modal button:hover {
+    background-color: #57c5af;
+}
+/* end of submit sign up modal */
+
+/* signout modal */
+.signout-modal {
+    max-width: 400px;
+    background-color: #fff;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.3);;
+    border-radius: 0 0 1rem 1rem;
+    display: none;
+}
+
+.signout-modal i {
+    position: absolute;
+    top: -28%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 10rem;
+    background-color: transparent;
+    color: red;
+}
+
+.signout-modal p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: #868383;
+    padding: 3rem 0;
+}
+
+.stay-leave {
+    width: 100%;
+    display: flex;
+}
+
+.stay-btn {
+    width: 50%;
+    margin: 1rem;
+    padding: 10px 0;
+    color: #fff;
+    background-color: #379683;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: background-color .4s;
+}
+
+.stay-btn:hover {
+    background-color: #57c5af;
+}
+
+.leave-btn {
+    width: 50%;
+    margin: 1rem;
+    color: #fff;
+    background-color: maroon;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: background-color .4s;
+}
+
+.leave-btn:hover {
+    background-color: rgb(204, 43, 43);
+}
+/* end of signout midal */
+
+
 /* ===================================================================================== */
 /* ===================================================================================== */
 
 /* Main-Page */
 
-.main-page {
-    display: block;
-}
+/* .main-page {
+    display: none;
+} */
 
 /* navbar */
 
@@ -1175,7 +1456,7 @@ main.sign-up-mode .slideshow {
 
 .food-description {
     position: absolute;
-    bottom: 3vw;
+    bottom: 5vw;
     left: 2rem;
     width: 70%;
     font-size: 1.5rem;
@@ -1343,9 +1624,608 @@ main.sign-up-mode .slideshow {
     text-align: center;
 }
 /* end of section 5 */
+/* end of main page */
+
+
+/* ===================================================================================== */
+/* ===================================================================================== */
+
+
+/* canteen page */
+
+/* .canteen-page {
+    display: none;
+} */
+
+
+.navbar-canteen {
+    width: 100%;
+    height: 14rem;
+    /* position: fixed; */
+    /* top: -14rem;
+    z-index: 100; */
+    border-bottom: 1px solid rgb(77, 75, 75);
+    padding: 0 2rem;
+    
+    /* background-color: #25274D; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* transition: top .4s; */
+    /* display: none; */
+}
+
+.navbar-canteen-bg1 {
+    background-color: #379683;
+}
+
+.navbar-canteen h2 {
+    font-size: 4rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    letter-spacing: -.5px;
+    text-shadow: .2rem .2rem .2rem #000;
+    color: #fff;
+}
+
+.navbar-canteen span {
+    color: #25274D;
+    font-weight: 900;
+    text-shadow: .1rem .1rem .1rem #000;
+}
+
+.cart {
+    background: #379683;
+    color: #05386B;
+    font-size: 3rem;
+    padding: .5rem;
+    margin-right: 1rem;
+    border-radius: .4rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.cart-home {
+    padding-right: 2rem;
+    color: #05386B;
+}
+
+.cart-a i {
+    background: #379683;
+    color: #05386B;
+    font-size: 3rem;
+    padding: .5rem;
+    margin-right: 1rem;
+    border-radius: .4rem;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.cartAmount {
+    position: absolute;
+    top: -15px;
+    right: 0;
+    font-size: 8px;
+    background-color: red;
+    color: white;
+    padding: 1rem;
+    border-radius: 50%;
+}
+
+.cartAmount-a {
+    position: absolute;
+    top: -15px;
+    right: -10px;
+    font-size: 8px;
+    background-color: red;
+    color: white;
+    padding: 1rem;
+    border-radius: 50%;
+}
+
+.canteen {
+    width: 100%;
+    /* height: calc(100vh - 14rem); */
+    padding: 5rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: #868383;
+    font-family: 'poppins', sans-serif;
+
+}
+
+.gallery-link-canteen {
+    width: 50rem;
+    height: 50rem;
+    /* height: 26vw; */
+    background-color: #379683;
+    margin: 2rem;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    text-align: center;
+    gap: 1rem;
+    border: 1px solid rgb(77, 75, 75);
+    transition: box-shadow .4s;
+}
+
+.gallery-link-canteen:hover {
+    box-shadow: .2rem .2rem .2rem black;
+}
+
+.food-img-canteen {
+    width: 100%;
+    height: 60%;
+    border-radius: 2rem 2rem 0 0;
+    /* background-position: center;
+    background-size: contain; */
+    background-repeat: no-repeat;
+}
+
+.food-name-canteen {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: .2rem .2rem .2rem #000;
+}
+
+.food-description-canteen {
+    font-size: 1.8rem;
+    color: #fff;
+    padding: 1rem;
+    text-shadow: .2rem .2rem .2rem #000
+}
+
+.price-quantity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: relative;
+}
+
+.price-quantity h2 {
+    font-size: 2.5rem;
+    position: absolute;
+    top: -10%;
+    left: 5%;
+    color: #fff;
+    text-shadow: .2rem .2rem .2rem #000;
+}
+
+.buttons-canteen {
+    position: absolute;
+    left: 64%;
+    width: 30%;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 1rem;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.bi-dash-lg {
+    font-size: 2rem;
+    color: red;
+    text-shadow: .1rem .1rem .1rem black;
+    padding: 1px 5px;
+    transition: background-color .4s;
+}
+
+.bi-dash-lg:active {
+    background-color: rgb(173, 173, 173);
+}
+
+.bi-plus-lg {
+    font-size: 2rem;
+    color: green;
+    text-shadow: .1rem .1rem .1rem black;
+    padding: 1px 5px;
+    transition: background-color .4s;
+}
+
+.bi-plus-lg:active {
+    background-color: rgb(173, 173, 173);
+}
+
+.quantity {
+    font-size: 2.3rem;
+    color: #05386B;
+}
+
+/* ===================================================================================== */
+/* ===================================================================================== */
+
+/* Cart-page */
+
+.cart-page {
+    max-width: 50%;
+    height: 540px;
+    margin: auto;
+    padding-top: 14rem;
+    overflow: auto;
+    background-color: #868383;
+    /* border: 1px solid rgb(65, 65, 65); */
+
+}
+
+.navbar-cart {
+    width: 50%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.cart-utensils {
+    padding-right: 2rem;
+    background: #379683;
+    color: #05386B;
+    font-size: 3rem;
+    /* padding: .5rem; */
+    margin-right: 1rem;
+    border-radius: .4rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.text-center {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+#label {
+    position: fixed;
+    top: 13.8rem;
+    width: 50%;
+    margin: 0;
+    padding-bottom: 1rem;
+    background-color: #868383;
+    z-index: 15;
+    /* border-right: 1px solid rgb(65, 65, 65); */
+}
+
+#label h2 {
+    font-size: 2.5rem;
+    padding: 1.5rem;
+    color: white;
+    font-weight: 900;
+    text-shadow: .2rem .2rem .2rem #000;
+    letter-spacing: 1px;
+}
+
+/* .mealBtn {
+    background-color: #05386B;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    color: #fff;
+    text-shadow: .2rem .2rem .2rem #000;
+    box-shadow: .3rem .3rem .3rem #000;
+    cursor: pointer;
+}
+
+.mealBtn:active {
+    box-shadow: none;
+    background-color: #05498d;
+    box-shadow: .1rem .1rem .1rem #000;
+    color: #AAABB8;
+    text-shadow: none;
+} */
+
+.fa-x-cart {
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    color: maroon;
+    font-family: bold;
+    position: absolute;
+    top: 20%;
+    right: -18%;
+}
+
+.shopping-cart {
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(1, 350px);
+    justify-content: center;
+    gap: 15px;
+}
+
+.chosen-item {
+    border: 1px solid rgb(65, 65, 65);
+    background-color: white;
+    border-radius: 1rem;
+    display: flex;
+}
+
+.chosen-item img {
+    border-radius: 1rem 0 0 1rem;
+}
+
+
+.title-price-x {
+    position: relative;
+    width: 160px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-price-x-h4 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.p1 {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #05386B;
+}
+
+.p2 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #25274D;
+    background-color: #AAABB8;
+    padding: 5px;
+    border-radius: 30%;
+}
+
+.buttons-canteen-cart {
+    width: 50%;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 1rem ;
+    padding: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.c-deatils-h3 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-top: 3rem;
+    padding-left: 3rem;
+    color: #05386B;
+}
+
+.buyItem {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    background-color: green;
+    margin: .5rem;
+    padding: .8rem 3rem;
+    width: 20%;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: -.2rem -.2rem .2rem black inset;
+}
+
+.buyItem:active {
+    box-shadow: .2rem .2rem .2rem black inset;
+    color: #AAABB8;
+}
+
+.clearItem {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    background-color: red;
+    margin: .5rem;
+    padding: .8rem 3rem; 
+    width: 20%;
+    border: none;
+    cursor: pointer;
+    box-shadow: -.2rem -.2rem .2rem black inset;
+    border-radius: 5px;
+}
+
+.clearItem:active {
+    box-shadow: .2rem .2rem .2rem black inset;
+    color: #AAABB8;
+}
+/* end of canteen page */
 
 
 /* Responsive */
+
+/* signin/signup page */
+@media (max-width: 1400px) {
+    .error1 {
+        padding-top: 4.8rem;
+    }
+
+    .error2 {
+        padding-top: 4.8rem;
+    }
+
+    .error3 {
+        padding-top: 4.8rem;
+    }
+
+    .error1-2 {
+        padding-top: 3.6rem;
+    }
+
+    .error2-2 {
+        padding-top: 4.9rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .error1 {
+        padding-top: 6rem;
+    }
+
+    .error2 {
+        padding-top: 6rem;
+    }
+
+    .error3 {
+        padding-top: 6rem;
+    }
+
+    .error1-2 {
+        padding-top: 4.8rem;
+    }
+
+    .error2-2 {
+        padding-top: 6rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .error1 {
+        padding-top: 6.5rem;
+    }
+
+    .error2 {
+        padding-top: 6.5rem;
+    }
+
+    .error3 {
+        padding-top: 6.5rem;
+    }
+
+    .error1-2 {
+        padding-top: 5.6rem;
+    }
+
+    .error2-2 {
+        padding-top: 6.4rem;
+    }
+}
+
+/* for signup modal */
+@media (max-width: 630px) {
+    .submit-modal i {
+        top: -30%;
+    }
+}
+/* end of sign up modal */
+
+
+/* main page */
+@media (max-width: 850px) {
+    .box {
+        height: auto;
+        max-width: 550px;
+        overflow: hidden;
+    }
+
+    .inner-box {
+        position: static;
+        transform: none;
+        width: revert;
+        height: revert;
+        padding: 4rem;
+    }
+
+    .forms-wrap {
+        position: revert;
+        width: 100%;
+        height: auto;
+    }
+
+    .form1 {
+        max-width: revert;
+        padding: 3rem 5rem 4rem;
+        transition: transform .8s ease-in-out, opacity .45s linear;
+    }
+
+
+    .form2 {
+        max-width: revert;
+        padding: 3rem 5rem 4rem;
+        transition: transform .8s ease-in-out, opacity .45s linear;
+    }
+
+    .sign-up-form {
+        transform: translateX(100%);
+    }
+
+    main.sign-up-mode .form1 {
+        transform: translateX(-100%);
+    }
+
+    main.sign-up-mode .form2 {
+        transform: translateX(0);
+    }
+
+    .heading1 {
+        margin: 2rem 0;
+    }
+
+    .slideshow {
+        position: revert;
+        height: auto;
+        width: 100%;
+        padding: 6rem 4rem;
+        display: flex;
+    }
+
+    .images-wrapper {
+        display: none;
+    }
+
+    .text-slider {
+        width: 100%;
+    }
+}
+
+@media (max-width: 530px){
+    main {
+        padding: 2rem;
+    }
+
+    .box {
+        border-radius: 2rem;
+    }
+
+    .inner-box {
+        padding: 2rem;
+    }
+
+    .slideshow {
+        padding: 3rem 2rem;
+        border-radius: 3.2rem;
+    }
+
+    .text-wrapper {
+        margin-bottom: 2rem;
+    }
+
+    .text-group h2 {
+        font-size: 2rem;
+    }
+
+    .form1 {
+        padding: 2rem 4rem 3rem;
+    }
+
+    .form2 {
+        padding: 2rem 4rem 3rem;
+    }
+
+    .login-modal {
+        max-width: 70%;
+        height: auto;
+    }
+}
+/* end of signin/signup page */
+
+/* main page */
 @media (max-width: 1400px) {
     html {
         font-size: 50%;
@@ -1393,6 +2273,18 @@ main.sign-up-mode .slideshow {
 @media(max-width:992px) {
     html {
         font-size: 40%;
+    }
+
+    .cart-page {
+        max-width: 70%;
+    }
+
+    .navbar-cart {
+        width: 70%;
+    }
+
+    #label {
+        width: 70%;
     }
 }
 
@@ -1449,13 +2341,31 @@ main.sign-up-mode .slideshow {
     }
 
     .food-description {
-        bottom: 15vw;
+        bottom: 20vw;
     }
 }
 
 @media(max-width:576px) {
     html {
         font-size: 37%;
+    } 
+
+    .cart-page {
+        max-width: 90%;
+    }
+
+    .navbar-cart {
+        width: 90%;
+    }
+
+    #label {
+        width: 90%;
+    }
+}
+
+@media(max-width:500px) {
+    .food-description {
+        bottom: 30vw;
     }
 }
 
@@ -1468,6 +2378,23 @@ main.sign-up-mode .slideshow {
     .section-4-h-p p {
         font-size: 3rem;
     }
+
+    .cart-page {
+        max-width: 100%;
+        height: 100%;
+        background-color: #fff;
+    }
+
+    .navbar-cart {
+        width: 100%;
+    }
+
+    #label {
+        width: 100%;
+        /* background-color: #fff; */
+    }
+
+
 }
 
 @media(max-width:359px) {
@@ -1476,6 +2403,8 @@ main.sign-up-mode .slideshow {
         height: 40rem;
     }
 }
+/* end of main page */
+
 /* End of Responsive */
 
 /* end of main page */
